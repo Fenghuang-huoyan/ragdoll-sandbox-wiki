@@ -20,7 +20,7 @@ export const siteConfig = {
   homeDescription:
     'Unofficial English fan guide for Ragdoll Sandbox on Roblox (universe 10771155665). The game page lists code SANDBOX for $1000, checked 6 Nov 2026, plus a short play overview. Not affiliated with Roblox or Rise To Top.',
   analytics: {
-    gaId: '',
+    gaId: 'G-L6NZ8CXP77',
   },
   art: {
     hero: '/images/official/roblox/thumb-05.png',
