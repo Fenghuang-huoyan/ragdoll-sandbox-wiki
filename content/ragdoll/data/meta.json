@@ -1,0 +1,18 @@
+{
+  "created": "16 Oct 2026",
+  "updated": "6 Nov 2026",
+  "playing": "21,296",
+  "playingNote": "games API playing field on one read, 6 Nov 2026. The number moves all day.",
+  "visits": "10,271,769",
+  "visitsNote": "Visits on that same games API read.",
+  "votes": "6,350 up",
+  "votesNote": "6,350 upvotes and 1,039 downvotes. The description still says the next code is at 5k likes, and it still names only SANDBOX.",
+  "favorites": "379,031",
+  "favoritesNote": "favoritedCount on the same games API read.",
+  "price": "Free",
+  "priceNote": "games API price was null, the usual marker for a free experience. No Robux price was in that payload.",
+  "genre": "Sandbox",
+  "genreNote": "Genre fields on the games API: Simulation, then Sandbox.",
+  "code": "SANDBOX",
+  "codeNote": "Description text: Use code SANDBOX for $1000. Updated timestamp 2026-11-06T04:47:43Z."
+}
