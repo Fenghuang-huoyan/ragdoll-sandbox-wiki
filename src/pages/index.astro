@@ -1,0 +1,235 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@framework/layouts/BaseLayout.astro';
+import QuickAnswer from '@framework/components/QuickAnswer.astro';
+import AdSlot from '@framework/components/AdSlot.astro';
+import FaqList from '@framework/components/FaqList.astro';
+import { loadData } from '@framework/lib/content';
+import { siteConfig } from '@site/site.config';
+import { faqJsonLd, websiteJsonLd } from '@framework/lib/seo';
+
+const meta = loadData<{
+  created: string;
+  updated: string;
+  playing: string;
+  playingNote: string;
+  visits: string;
+  visitsNote: string;
+  votes: string;
+  votesNote: string;
+  favorites: string;
+  favoritesNote: string;
+  price: string;
+  priceNote: string;
+  genre: string;
+  genreNote: string;
+  code: string;
+  codeNote: string;
+}>('meta');
+
+const faq = loadData<{ q: string; a: string; featured?: boolean }[]>('faq');
+const pages = (await getCollection('pages')).sort((a, b) => a.data.order - b.data.order);
+
+const art = {
+  icon: '/images/official/roblox/icon.png',
+  ragdolls: '/images/official/roblox/thumb-00.png',
+  chainsaw: '/images/official/roblox/thumb-01.png',
+  tower: '/images/official/roblox/thumb-02.png',
+  boulder: '/images/official/roblox/thumb-03.png',
+  launcher: '/images/official/roblox/thumb-04.png',
+  jeep: '/images/official/roblox/thumb-05.png',
+};
+
+const guideArt: Record<string, string> = {
+  codes: art.icon,
+  guide: art.tower,
+  about: art.jeep,
+};
+
+const doors = [
+  {
+    href: '/codes',
+    num: '01',
+    title: 'Codes',
+    text: 'The game page prints SANDBOX for $1000. Checked 6 Nov 2026. No second string was in that description.',
+    image: art.icon,
+  },
+  {
+    href: '/guide',
+    num: '02',
+    title: 'Guide',
+    text: 'Destructible sandbox, 50+ weapons and gadgets, and a Zombie Rush that pays Brains. Only what the description says.',
+    image: art.tower,
+  },
+  {
+    href: '/about',
+    num: '03',
+    title: 'About',
+    text: 'Unofficial fan site. Disclaimer, privacy, and the Roblox art credits.',
+    image: art.launcher,
+  },
+];
+
+const stills = [
+  { src: art.ragdolls, caption: 'Ragdolls on the grid' },
+  { src: art.chainsaw, caption: 'Chainsaw and ragdoll' },
+  { src: art.tower, caption: 'Tower coming apart' },
+  { src: art.boulder, caption: 'Boulder on a ramp' },
+  { src: art.launcher, caption: 'Wooden launcher' },
+  { src: art.jeep, caption: 'Jeep explosion' },
+];
+---
+<BaseLayout
+  title={siteConfig.homeTitle}
+  description={siteConfig.homeDescription}
+  jsonLd={[
+    websiteJsonLd(),
+    faqJsonLd(faq.filter((item) => item.featured).map((item) => ({ q: item.q, a: item.a }))),
+  ]}
+>
+  <main id="content">
+    <div class="shell">
+      <p class="tape">
+        <span>Fan guide · not affiliated with Roblox or Rise To Top</span>
+        <span>Universe {siteConfig.universeId}</span>
+        <span>{siteConfig.version.label}</span>
+      </p>
+
+      <section class="town-hero">
+        <img
+          class="hero-art"
+          src={siteConfig.art.hero}
+          alt={siteConfig.art.heroAlt}
+          width="768"
+          height="426"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="hero-panel">
+          <p class="kicker">{siteConfig.developer} · Roblox · description updated {meta.updated}</p>
+          <h1>Codes and a short guide for Ragdoll Sandbox.</h1>
+          <p class="lede">
+            English pages for the Roblox sandbox: the redeem code printed on the game page, and the play pitch in that same description.
+            Zombie Rush, Brains, and the Goblin Glider are quoted from the 6 Nov 2026 text. A missing stat stays missing.
+          </p>
+          <div class="cta-row">
+            <a class="btn" href="/codes">Codes</a>
+            <a class="btn ghost" href="/guide">Guide</a>
+            <a class="btn ghost" href={siteConfig.storeUrl}>Play on Roblox</a>
+          </div>
+          <p class="version-note">{siteConfig.version.detail}</p>
+        </div>
+      </section>
+      <p class="art-credit">
+        Icon and thumbnails are official Roblox assets for universe {siteConfig.universeId}, saved from the thumbnail API.
+        Credits and source URLs: <a href="/images/official/roblox/ATTRIBUTION.txt">ATTRIBUTION.txt</a>.
+      </p>
+
+      <section class="section">
+        <h2>Three doors</h2>
+        <p class="section-intro">
+          Open the code list, the gameplay overview, or the disclaimer. Home, codes, and guide link to each other in the header.
+        </p>
+        <div class="door-grid">
+          {doors.map((door) => (
+            <a class="door" href={door.href}>
+              <span class="card-art">
+                <img src={door.image} alt="" width="768" height="426" decoding="async" />
+                <span class="num">{door.num}</span>
+              </span>
+              <span class="card-copy">
+                <h3>{door.title}</h3>
+                <p>{door.text}</p>
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="section" aria-label="Official Roblox thumbnails">
+        <h2>The experience’s own frames</h2>
+        <p class="section-intro">
+          Six thumbnails from the Roblox thumbnail API: ragdolls, a chainsaw, a breaking tower, a boulder, a wooden launcher, and a jeep explosion. They illustrate the description. They are not a shop list.
+        </p>
+        <div class="still-row">
+          {stills.map((still) => (
+            <figure>
+              <img src={still.src} alt="" width="768" height="426" loading="lazy" decoding="async" />
+              <figcaption>{still.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section class="stat-row" aria-label="Roblox figures from 6 Nov 2026">
+        <div class="stat"><strong>{meta.code}</strong><span>{meta.codeNote}</span></div>
+        <div class="stat"><strong>{meta.playing}</strong><span>{meta.playingNote}</span></div>
+        <div class="stat"><strong>{meta.visits}</strong><span>{meta.visitsNote}</span></div>
+        <div class="stat"><strong>{meta.price}</strong><span>{meta.priceNote}</span></div>
+      </section>
+
+      <section class="section home-quick">
+        <QuickAnswer
+          sentences={[
+            'Ragdoll Sandbox is a Roblox experience by the group Rise To Top (universe 10771155665, root place 113398609378596). On 6 Nov 2026 the games API marked it free, genre Simulation / Sandbox, created 16 Oct 2026, with 21,296 people playing on that read and 10,271,769 visits.',
+            'The description says everything is destructible, with 50+ weapons and gadgets used on ragdolls, and that trees, walls, towers, and cars break apart. It opens with a Zombie Rush event: kill zombies, collect Brains, unlock limited weapons and the Goblin Glider, six new weapons unnamed.',
+            'The same description says “Use code SANDBOX for $1000” and “Next code at 5k likes!” Votes that day were 6,350 up and 1,039 down. The text still names only SANDBOX. Dexerto (5 Nov 2026) and Roblox Den (read 6 Nov 2026) list that code as active. This site did not redeem it.',
+            'Redeeming is inside the Roblox client. Dexerto describes joining Rise To Top, then an ABC button at the top left. The playable URL is the place page. /games/10771155665 returns 404 because that number is the universe id.',
+          ]}
+        />
+        <AdSlot name="afterQuickAnswer" />
+      </section>
+
+      <section class="section">
+        <h2>The pages</h2>
+        <p class="section-intro">
+          English only. A line from the Roblox description is labeled with 6 Nov 2026. A figure a tracker added is labeled as a tracker line. A missing stat stays missing.
+        </p>
+        <div class="card-grid">
+          {pages.map((page) => (
+            <a class="guide-card" href={`/${page.id}`}>
+              <span class="card-art">
+                <img src={guideArt[page.id] ?? art.icon} alt="" width="768" height="426" loading="lazy" decoding="async" />
+              </span>
+              <span class="card-copy">
+                <span class="section-tag">{page.data.section}</span>
+                <h3>{page.data.h1}</h3>
+                <p>{page.data.description}</p>
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="scope">
+          <div>
+            <h2>What this wiki is for</h2>
+            <p>
+              The experience page, the group, and the public games API live at {siteConfig.databases.map((db, i) => (
+                <>
+                  <a href={db.href}>{db.label}</a>
+                  {i < siteConfig.databases.length - 1 ? ', ' : ''}
+                </>
+              ))}. This site is the skim: the published code, the redeem steps guides describe, and the play pitch in the description.
+            </p>
+            <p>
+              Counts above are one read on {meta.updated}. If the description and this page disagree, trust the game page.
+            </p>
+          </div>
+          <div>
+            <h2>In Roblox’s record</h2>
+            <p>
+              {siteConfig.developer} is the creator group. Genre on the API: {meta.genreNote} Favorites: {meta.favorites}. Votes: {meta.votesNote}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section home-faq">
+        <h2>Short answers</h2>
+        <FaqList featuredOnly />
+      </section>
+    </div>
+  </main>
+</BaseLayout>

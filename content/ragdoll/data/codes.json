@@ -1,0 +1,33 @@
+{
+  "checked": "6 Nov 2026",
+  "groups": [
+    {
+      "id": "active",
+      "title": "Active codes — listed on the game page",
+      "intro": "This row copies the only code string in the Roblox games API description for universe 10771155665, read on 6 Nov 2026. The description says “Use code SANDBOX for $1000.” Dexerto (5 Nov 2026) and Roblox Den (read 6 Nov 2026) also list SANDBOX as active for $1,000 Cash. This wiki did not redeem it in a client.",
+      "rows": [
+        {
+          "code": "SANDBOX",
+          "reward": "$1,000",
+          "status": "newest",
+          "statusLabel": "On game page",
+          "note": "6 Nov 2026. Printed in the experience description (updated 2026-11-06T04:47:43Z). Trackers call the reward $1,000 Cash. The description writes $1000 and does not add the word Cash. Paste it in the Roblox client, not on this website."
+        }
+      ]
+    },
+    {
+      "id": "expired",
+      "title": "Expired codes — none filed",
+      "intro": "The 6 Nov 2026 description names one string. Dexerto and Roblox Den, read the same week, list no expired code. Filing a dead string this site has not seen would invent a code.",
+      "rows": [
+        {
+          "code": "—",
+          "reward": "—",
+          "status": "placeholder",
+          "statusLabel": "Placeholder",
+          "note": "6 Nov 2026. No expired code is listed, because none was verified here first. The line “Next code at 5k likes!” is a promise in the description, not a second code."
+        }
+      ]
+    }
+  ]
+}

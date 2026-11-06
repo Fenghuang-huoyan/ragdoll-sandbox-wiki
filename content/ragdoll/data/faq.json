@@ -1,0 +1,34 @@
+[
+  {
+    "q": "What is the Ragdoll Sandbox code right now?",
+    "a": "On 6 November 2026 the Roblox games API description for universe 10771155665 said “Use code SANDBOX for $1000.” Dexerto (5 Nov 2026) and Roblox Den (read 6 Nov 2026) list that same string as active for $1,000 Cash. This wiki did not redeem it. The description also says “Next code at 5k likes!” and does not print a second string. Upvotes that day were 6,350.",
+    "featured": true
+  },
+  {
+    "q": "How do I redeem a Ragdoll Sandbox code?",
+    "a": "There is no redeem box on this website. Dexerto (5 Nov 2026) says you join the Rise To Top Roblox group first, then use an ABC button at the top left next to the chat icon, type the code, and press Redeem. Roblox Den (read 6 Nov 2026) shows that ABC icon, an Enter code box, and a Redeem button. The experience description does not name the button. This site has not pressed it.",
+    "featured": true
+  },
+  {
+    "q": "Did a new code drop after 5,000 likes?",
+    "a": "The votes API on 6 November 2026 reported 6,350 upvotes and 1,039 downvotes, which is past 5,000. The description, last updated 2026-11-06T04:47:43Z, still contains only SANDBOX plus the sentence “Next code at 5k likes!” No second code string was in that text.",
+    "featured": true
+  },
+  {
+    "q": "Who makes Ragdoll Sandbox, and is this site official?",
+    "a": "The games API lists creator Rise To Top, a Roblox group (id 257996659). The experience is universe 10771155665, root place 113398609378596. ragdollsandbox.wiki is a fan guide. It is not affiliated with Roblox Corporation or Rise To Top.",
+    "featured": true
+  },
+  {
+    "q": "Is Ragdoll Sandbox free?",
+    "a": "The games API price field on 6 November 2026 was null, which is how Roblox marks a free experience. No Robux access price was in that payload."
+  },
+  {
+    "q": "What is Zombie Rush?",
+    "a": "The top of the 6 November 2026 description is a Zombie Rush event: kill zombies, collect Brains, and unlock limited weapons and the Goblin Glider. It counts six new weapons and does not name them. It does not print an end date."
+  },
+  {
+    "q": "Where do new codes get posted?",
+    "a": "The string SANDBOX was in the experience description itself. The playable page is https://www.roblox.com/games/113398609378596/Ragdoll-Sandbox. The group page is https://www.roblox.com/groups/257996659/Rise-To-Top. Dexerto and Roblox Den are the dated trackers this guide also read. A public Discord invite was not confirmed from the group record, so this site does not link one."
+  }
+]

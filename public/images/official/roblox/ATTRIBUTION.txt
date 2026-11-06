@@ -1,0 +1,57 @@
+Official Roblox thumbnails for Ragdoll Sandbox.
+Self-hosted so the wiki does not hotlink the Roblox CDN at page-view time.
+The bytes were downloaded on 6 Nov 2026 from the thumbnail URLs the public
+thumbnails API returned that day. Those CDN links are temporary (180-day tokens).
+Fan site: not affiliated with Roblox Corporation or the Rise To Top group.
+
+Experience name on the games API: [🎃] Ragdoll Sandbox
+Universe id: 10771155665
+Root place id: 113398609378596
+Creator: Rise To Top (group 257996659)
+Playable page: https://www.roblox.com/games/113398609378596/Ragdoll-Sandbox
+Games API: https://games.roblox.com/v1/games?universeIds=10771155665
+
+Opening https://www.roblox.com/games/10771155665 returns 404. That number is the
+universe id. The root place page above is the URL that returned 200.
+
+favicon.ico
+  32×32 icon derived from the official 512×512 experience icon below.
+
+icon.png
+  Experience icon, 512×512
+  API: https://thumbnails.roblox.com/v1/games/icons?universeIds=10771155665&returnPolicy=PlaceHolder&size=512x512&format=Png&isCircular=false
+  File: https://tr.rbxcdn.com/180DAY-369e87b23a5475ef2a824874f13f2126/512/512/Image/Png/noFilter
+  A pale ragdoll in the foreground, a player character firing eye beams, a ragdoll on the ground, and the RAGDOLL SANDBOX logo.
+
+Game thumbnails were requested at size 768x432. The files saved here are 768×426.
+API: https://thumbnails.roblox.com/v1/games/multiget/thumbnails?universeIds=10771155665&countPerUniverse=8&defaults=true&size=768x432&format=Png&isCircular=false
+
+thumb-00.png
+  targetId 106431481644205
+  Five pale ragdolls on a green grid, with an arrow, a spear, and throwing stars.
+  https://tr.rbxcdn.com/180DAY-a009a6838fea74c5757105418683472b/768/432/Image/Png/noFilter
+
+thumb-01.png
+  targetId 119667499047979
+  A player character with a chainsaw beside a worried pale ragdoll.
+  https://tr.rbxcdn.com/180DAY-b5345a9803c4d5f970496e6c60063513/768/432/Image/Png/noFilter
+
+thumb-02.png
+  targetId 131781499167287
+  A pale ragdoll thrown clear of a stone tower breaking into blocks.
+  https://tr.rbxcdn.com/180DAY-7649552f2dbca6ddd4d47b6ee8d5b571/768/432/Image/Png/noFilter
+
+thumb-03.png
+  targetId 117184463000111
+  A pale ragdoll on a green grid in front of a boulder on a wooden ramp.
+  https://tr.rbxcdn.com/180DAY-4d9f0c794c6c8a844769ef51d9ee76f6/768/432/Image/Png/noFilter
+
+thumb-04.png
+  targetId 109911670801626
+  A wooden launcher and a pale ragdoll arcing across a blue sky.
+  https://tr.rbxcdn.com/180DAY-6f47e121b03d17ccfe2f665211082c29/768/432/Image/Png/noFilter
+
+thumb-05.png
+  targetId 126779590580691
+  A pale ragdoll beside a tan jeep exploding into blocks.
+  https://tr.rbxcdn.com/180DAY-9851f76991ad354b1357d6822364fb71/768/432/Image/Png/noFilter
